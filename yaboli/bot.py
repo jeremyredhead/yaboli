@@ -46,10 +46,9 @@ class Bot(Controller):
 		self._commands.add((command, specific), callback)
 	
 	def register_trigger(self, regex, callback):
-		self._triggers.add(re.compile(regex), callback)
-	
-	def register_trigger_compiled(self, comp_regex, callback):
-		self._triggers.add(comp_regex, callback)
+		if isinstance(regex, str):
+			regex = re.compile(regex)
+		self._triggers.add(regex, callback)
 	
 	def add_help(self, topic, text, visible=True):
 		info = self.TopicHelp(text, visible)
