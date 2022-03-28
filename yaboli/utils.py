@@ -154,7 +154,7 @@ class Listing:
 		self._sessions[session.session_id] = session
 	
 	def remove(self, session_id):
-		self._sessions.pop(session_id)
+		self._sessions.pop(session_id, None)
 	
 	def remove_combo(self, server_id, server_era):
 		self._sessions = {i: ses for i, ses in self._sessions.items()
