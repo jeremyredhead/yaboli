@@ -31,7 +31,7 @@ class Room:
 	reconnect a few times. Loss of connection is determined by self._conn.
 	"""
 	
-	ROOM_FORMAT = "wss://euphoria.io/room/{}/ws"
+	ROOM_FORMAT = "wss://euphoria.leet.nu/room/{}/ws"
 	HUMAN_FORMAT = f"{ROOM_FORMAT}?h=1"
 	
 	def __init__(self, roomname, controller, human=False, cookie=None):
