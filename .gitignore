@@ -1,2 +1,12 @@
-yaboli/__pycache__/
+# python
+__pycache__/
+*.py[codz]
+
+# python packaging
+build/
+dist/
+*.egg-info/
+
+# yaboli-specific
+## for yaboli.database:
 *.db
