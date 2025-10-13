@@ -129,7 +129,7 @@ class Connection:
 		if await_response:
 			wait_for = self._wait_for_response(pid)
 		
-		logging.debug(f"Currently used websocket at self._ws: {self._ws}")
+		logger.debug(f"Currently used websocket at self._ws: {self._ws}")
 		await self._ws.send(json.dumps(packet, separators=(',', ':'))) # minimum size
 		
 		if await_response:
@@ -143,7 +143,7 @@ class Connection:
 	async def _handle_next_message(self):
 		response = await self._ws.recv()
 		task = asyncio.ensure_future(self._handle_json(response))
-		self._track_task(task) # will be cancelled when the connection is closed
+		self._track_task(task) # will be canceled when the connection is closed
 	
 	def _clean_up_futures(self):
 		for pid, future in self._pending_responses.items():
