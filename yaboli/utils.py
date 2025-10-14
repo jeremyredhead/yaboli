@@ -24,7 +24,7 @@ def run_controller(controller, room):
 		if task:
 			await task
 		else:
-			logger.warn(f"Could not connect to &{room}: {reason!r}")
+			logger.warning(f"Could not connect to &{room}: {reason!r}")
 	
 	asyncio.get_event_loop().run_until_complete(run())
 
@@ -42,7 +42,7 @@ def run_bot(bot_class, room, *args, **kwargs):
 			if task:
 				await task
 			else:
-				logger.warn(f"Could not connect to &{room}: {reason!r}")
+				logger.warning(f"Could not connect to &{room}: {reason!r}")
 			
 			if bot.restarting:
 				logger.info(f"Restarting in &{room}")

@@ -388,7 +388,7 @@ class Room:
 		"""
 		
 		if packet.get("throttled", False):
-			logger.warn(f"&{self.roomname}: Throttled for reason: {packet.get('throttled_reason', 'no reason')!r}")
+			logger.warning(f"&{self.roomname}: Throttled for reason: {packet.get('throttled_reason', 'no reason')!r}")
 		
 		if "error" in packet:
 			raise ResponseError(packet.get("error"))

@@ -302,7 +302,7 @@ class Bot(Controller):
 		await self.room.send(text, message.mid)
 	
 	async def command_kill(self, message, args):
-		logger.warn(f"Kill attempt by @{mention(message.sender.nick)} ({message.sender.user_id}) in &{self.room.roomname}: {message.content!r}")
+		logger.warning(f"Kill attempt by @{mention(message.sender.nick)} ({message.sender.user_id}) in &{self.room.roomname}: {message.content!r}")
 		
 		if self.kill_message is not None:
 			await self.room.send(self.kill_message, message.mid)
@@ -311,7 +311,7 @@ class Bot(Controller):
 			await self.stop()
 	
 	async def command_restart(self, message, args):
-		logger.warn(f"Restart attempt by @{mention(message.sender.nick)} ({message.sender.user_id}) in &{self.room.roomname}: {message.content!r}")
+		logger.warning(f"Restart attempt by @{mention(message.sender.nick)} ({message.sender.user_id}) in &{self.room.roomname}: {message.content!r}")
 		
 		if self.restart_message is not None:
 			await self.room.send(self.restart_message, message.mid)

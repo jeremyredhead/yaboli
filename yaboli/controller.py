@@ -94,7 +94,7 @@ class Controller:
 		# attempt to connect to the room
 		task = await self.room.connect()
 		if not task:
-			logger.warn(f"Could not connect to &{roomname}.")
+			logger.warning(f"Could not connect to &{roomname}.")
 			self.room = None
 			return None, "no room"
 		
@@ -114,7 +114,7 @@ class Controller:
 			logger.info(f"Successfully connected to &{roomname}.")
 			return task, result
 		else: # not successful for some reason
-			logger.warn(f"Could not join &{roomname}: {result!r}")
+			logger.warning(f"Could not join &{roomname}: {result!r}")
 			await self.stop()
 			return None, result
 	
@@ -131,7 +131,7 @@ class Controller:
 			self.nick = to_nick
 			
 			if to_nick != nick:
-				logger.warn(f"&{self.room.roomname}: Could not set nick to {nick!r}, set to {to_nick!r} instead.")
+				logger.warning(f"&{self.room.roomname}: Could not set nick to {nick!r}, set to {to_nick!r} instead.")
 	
 	async def on_connected(self):
 		"""
