@@ -11,9 +11,9 @@ __all__ = ["Account", "Session", "LiveSession", "LiveSessionListing"]
 
 class Account:
     """
-    This class represents a http://api.euphoria.io/#personalaccountview, with a
+    This class represents a http://api.euphoria.leet.nu/#personalaccountview, with a
     few added fields stolen from the hello-event (see
-    http://api.euphoria.io/#hello-event).
+    http://api.euphoria.leet.nu/#hello-event).
     """
 
     def __init__(self,

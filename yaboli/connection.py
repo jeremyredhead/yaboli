@@ -450,7 +450,7 @@ class Connection:
 
     def _process_packet(self, packet: Any) -> None:
         # This function assumes that the packet is formed correctly according
-        # to http://api.euphoria.io/#packets.
+        # to http://api.euphoria.leet.nu/#packets.
 
         # First, notify whoever's waiting for this packet
         packet_id = packet.get("id")
@@ -496,7 +496,7 @@ class Connection:
 
     async def _ping_pong(self, packet: Any) -> None:
         """
-        Implements http://api.euphoria.io/#ping and is called as "ping-event"
+        Implements http://api.euphoria.leet.nu/#ping and is called as "ping-event"
         callback.
         """
         logger.debug("Pong!")

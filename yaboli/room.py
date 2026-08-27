@@ -55,12 +55,12 @@ class Room:
         from_room: str - the room where the invitation was sent from
         pm_id: str     - the private chat can be accessed at /room/pm:PMID
 
-    "disconect" - corresponds to http://api.euphoria.io/#disconnect-event (if
+    "disconect" - corresponds to http://api.euphoria.leet.nu/#disconnect-event (if
     the reason is "authentication changed", the room automatically reconnects)
         reason: str - the reason for disconnection
     """
 
-    URL_FORMAT = "wss://euphoria.io/room/{}/ws"
+    URL_FORMAT = "wss://euphoria.leet.nu/room/{}/ws"
 
     def __init__(self,
             name: str,

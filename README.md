@@ -1,7 +1,7 @@
 # Yaboli
 
 Yaboli (**Y**et **A**nother **Bo**t **Li**brary) is a Python library for
-creating bots for [euphoria.io](https://euphoria.io).
+creating bots for [euphoria](https://euphoria.leet.nu).
 
 - [Documentation](docs/index.md)
 - [Changelog](CHANGELOG.md)
