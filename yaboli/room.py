@@ -66,13 +66,13 @@ class Room:
             name: str,
             password: Optional[str] = None,
             target_nick: str = "",
-            url_format: str = URL_FORMAT,
+            url_format: Optional[str] = None,
             cookie_file: Optional[str] = None,
             ) -> None:
         self._name = name
         self._password = password
         self._target_nick = target_nick
-        self._url_format = url_format
+        self._url_format = url_format or URL_FORMAT
 
         self._session: Optional[LiveSession] = None
         self._account: Optional[Account] = None
